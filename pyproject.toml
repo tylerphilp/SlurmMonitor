@@ -1,7 +1,15 @@
 [project]
 name = "slurmmonitor"
 version = "0.1.0"
-description = "Add your description here"
+description = "Monitor slurm jobs (primarily submitted to ORCD) using slack"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Repository = "https://github.com/tylerphilp/SlurmMonitor"
+authors = "Tyler Philp"
