@@ -1,2 +1,2 @@
-import monitor
-import slackbot
+from monitor import SlurmMonitor
+from slackbot import SlackMessenger
