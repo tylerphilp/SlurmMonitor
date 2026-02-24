@@ -3,10 +3,12 @@
 
 # Monitor the status of the job (pending, running, completed)
 # Run every hour or so and report response
-
+# %%
 import subprocess
 import time
-from slackbot.messenger import SlackMessenger
+from modules.slackbot.messenger import SlackMessenger
+
+# %%
 
 
 class SlurmMonitor:
