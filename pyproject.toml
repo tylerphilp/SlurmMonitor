@@ -10,8 +10,8 @@ dependencies = ["python-dotenv"]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools.packages.find]
-where = ["modules"]
+[tool.setuptools]
+packages = ["slurmmonitor"]
 
 [project.optional-dependencies]
 test = ["pytest>=8.0.0", "pytest-cov>=4.1.0", "pytest-mock>=3.12.0"]
