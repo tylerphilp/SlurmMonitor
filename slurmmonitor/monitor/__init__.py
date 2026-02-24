@@ -1,1 +1,1 @@
-from monitor_slurm import SlurmMonitor
+from .monitor_slurm import SlurmMonitor

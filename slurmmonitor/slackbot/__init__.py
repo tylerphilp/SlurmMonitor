@@ -1,1 +1,1 @@
-from messenger import SlackMessenger
+from .messenger import SlackMessenger

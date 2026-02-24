@@ -1,0 +1,4 @@
+# %%
+from slurmmonitor import SlurmMonitor
+
+# %%
