@@ -1,4 +1,4 @@
 # %%
-from slurmmonitor import SlurmMonitor
+from slurmmonitor.monitor import SlurmMonitor
 
 # %%
