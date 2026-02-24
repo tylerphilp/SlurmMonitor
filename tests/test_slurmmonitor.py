@@ -2,8 +2,8 @@
 import pytest
 
 from unittest.mock import MagicMock, patch
-from modules.monitor.monitor_slurm import SlurmMonitor
-from modules.slackbot.messenger import SlackMessenger
+from slurmmonitor.monitor.monitor_slurm import SlurmMonitor
+from slurmmonitor.slackbot.messenger import SlackMessenger
 from subprocess import CompletedProcess
 
 # %%

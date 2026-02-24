@@ -6,7 +6,7 @@
 # %%
 import subprocess
 import time
-from modules.slackbot.messenger import SlackMessenger
+from slurmmonitor.slackbot.messenger import SlackMessenger
 
 # %%
 
