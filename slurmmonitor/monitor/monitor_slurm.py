@@ -12,10 +12,12 @@ from slurmmonitor.slackbot.messenger import SlackMessenger
 
 
 class SlurmMonitor:
-    def __init__(self, job_id, webhook):
+    def __init__(self, job_id, webhook=None):
         self.job_id = job_id
         self.messenger = SlackMessenger(webhook)
         self.last_status = None
+
+        self.messenger.send_message("SlurmMonitor initialised")
 
     def get_job_status(self):
         result = subprocess.run(
