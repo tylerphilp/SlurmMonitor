@@ -18,7 +18,7 @@ class SlurmMonitor:
         self.last_status = "PENDING"  # self.get_job_status()
 
         self.messenger.send_message(
-            f"SlurmMonitor initialised for job: {self.job_id}. Current status: {self.last_status}"
+            f"✨ SlurmMonitor initialised for job: {self.job_id}. Current status: {self.last_status}"
         )
 
     def get_job_status(self):
@@ -37,6 +37,7 @@ class SlurmMonitor:
                 self.messenger.send_message(f"Job {self.job_id} status: {status}")
                 self.last_status = status
                 if status == "COMPLETED":
+                    self.messenger.send_message(f"🎉 Job {self.job_id} {status}")
                     break
 
             time.sleep(poll_interval)
