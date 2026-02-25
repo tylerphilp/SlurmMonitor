@@ -7,10 +7,10 @@ import os
 
 
 class SlackMessenger:
-    def __init__(self, webhook_url=None):
+    def __init__(self):
         # Read webhook from the env file
         load_dotenv()
-        self.webhook_url = webhook_url if webhook_url else os.getenv("webhook_url")
+        self.webhook_url = os.getenv("webhook_url")
 
     def send_message(self, message: str):
         message_payload = {"text": message}
