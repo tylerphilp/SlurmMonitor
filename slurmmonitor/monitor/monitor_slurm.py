@@ -30,7 +30,7 @@ class SlurmMonitor:
         status = result.stdout.strip()
         return status if status else "COMPLETED"
 
-    def monitor(self, poll_interval=1800):  # Poll every half hour
+    def monitor(self, poll_interval=900):  # Poll every 15
         while True:
             status = self.get_job_status()
             if status != self.last_status:
