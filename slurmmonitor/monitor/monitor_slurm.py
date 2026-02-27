@@ -19,7 +19,7 @@ class SlurmMonitor:
         self.messenger = SlackMessenger()
         self.last_status = self.get_job_status()
 
-        # Hande timeouts and kill signal
+        # Handle timeouts and kill signals
         signal.signal(signal.SIGTERM, self.handle_termination)
 
         # Intialisation method
@@ -47,8 +47,6 @@ class SlurmMonitor:
                     break
 
             time.sleep(poll_interval)
-
-        # Need to add some logic for when the job is killed (since this is initialised in the job)
 
     def handle_termination(self, signum, frame):
         self.messenger.send_message(
