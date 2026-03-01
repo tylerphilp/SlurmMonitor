@@ -69,3 +69,18 @@ def test_runs_background():
         monitor._stop()
         thread.join(timeout=2)
         assert not thread.is_alive()
+
+
+def test_termination_message():
+    with (
+        patch.object(SlackMessenger, "send_message") as mock_send_message,
+        patch.object(SlurmMonitor, "get_job_status", return_value="RUNNING"),
+    ):
+        monitor = SlurmMonitor("12345")
+        thread = threading.Thread(target=monitor.monitor, kwargs={"poll_interval": 0})
+        thread.start()
+
+        monitor._stop()
+        thread.join(timeout=2)
+        last_message = mock_send_message.call_args[0][0]
+        assert "stopped externally" in last_message
